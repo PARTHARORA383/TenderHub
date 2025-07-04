@@ -27,7 +27,7 @@ export const AuthForm = ({isLogin , handleSubmit , email , setEmail , password ,
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, ease: 'easeIn' }}
         >
-          <Image src={"/images/logo.png"} height={200} width={200} alt='Logo' />
+          <Image src={"/images/Logo.png"} height={200} width={200} alt='Logo' className='max-h-28' />
         </motion.div>
 
         <motion.div

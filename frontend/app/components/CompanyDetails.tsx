@@ -54,7 +54,7 @@ export function CompanyDetails({companyid } :{companyid : string | null}) {
   }, [companyid]);
 
   return (
-    <div className="p-6">
+    <div className="pr-8 pb-8">
       {company ? (
         <motion.div
           initial={{ opacity: 0 }}
@@ -183,7 +183,7 @@ export function CompanyDetails({companyid } :{companyid : string | null}) {
                         <button
                           className="border-2 border-neutral-500 active:border-neutral-200 hover:bg-neutral-800 cursor-pointer transition-colors duration-200 text-neutral-100 px-10 py-2 rounded-md"
                           onClick={() => {
-                            router.push(`/Tender/apply/${tender?.id}`);
+                            router.push(`/tender/apply?tenderid=${tender?.id}`);
                           }}
                         >
                           Apply
@@ -201,8 +201,13 @@ export function CompanyDetails({companyid } :{companyid : string | null}) {
       ) : (
         <div>
           <div className="flex flex-col">
-
-            <div className="bg-neutral-900 animate-pulse h-20 w-full ml--6 mr-8 rounded-lg mt-20"></div> 
+              <div className="flex mt-8 justify-start items-center gap-6 "> 
+                <div className="h-10 w-24 bg-neutral-900 animate-pulse    rounded-lg  "></div>
+                <div className="h-10 w-24 bg-neutral-900 animate-pulse   rounded-lg "></div>
+              </div>
+            <div className="bg-neutral-900 animate-pulse h-32 w-full  mr-8 rounded-lg mt-8"></div> 
+            <div className="bg-neutral-900 animate-pulse h-68 w-full  mr-8 rounded-lg mt-8"></div> 
+            <div className="bg-neutral-900 animate-pulse h-32 w-full  mr-8 rounded-lg mt-8"></div> 
 
             </div>
         </div>

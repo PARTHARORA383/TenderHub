@@ -69,26 +69,26 @@ export default function FetchAllTenders() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: 'easeIn' }}
     > 
-      <div className="text-3xl ml-6 mt-4"> Tenders</div>
+      <div className="text-3xl ml-6 mt-8"> Tenders</div>
 
-      <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 h-10 animate-pulse rounded-md mr-8 ml-6 mt-4 w-1/3"></div>
-      <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
-      <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
-      <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
-      <div className="bg-gradient-to-br from-neutral-800 to-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
+      <div className="bg-neutral-900 h-10 animate-pulse rounded-md mr-8 ml-6 mt-4 w-1/3"></div>
+      <div className="bg-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
+      <div className="bg-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
+      <div className="bg-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
+      <div className="bg-neutral-900 h-42 animate-pulse rounded-md mr-8 ml-6 mt-4"></div>
 
     </motion.div>
   }
 
   return <div>
 
-    <div className="text-3xl ml-6 mt-4">Tenders</div>
+    <div className="text-3xl  mt-8">Tenders</div>
 
 
   <div className="flex justify-between items-baseline mr-8">
 
 
-    <div className="flex items-center bg-neutral-100 rounded-lg px-3 py-2 w-full max-w-md ml-6 mt-8">
+    <div className="flex items-center bg-neutral-100 rounded-lg px-3 py-2 w-full max-w-md mt-8">
       <AiOutlineSearch className="w-5 h-5 text-neutral-900" />
       <input
         type="text"
@@ -113,7 +113,7 @@ export default function FetchAllTenders() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.2, ease: 'easeIn' }}
         key={index}
-        className="relative flex flex-col  mt-4 bg-neutral-900 p-3 rounded-md mr-8 ml-6 mb-8">
+        className="relative flex flex-col  mt-4 bg-neutral-900 p-3 rounded-md mr-8 mb-8">
 
         <div className="text-lg">{tender?.title}</div>
         <div className="text-neutral-400 max-w-3xl mt-2">{tender?.description}</div>

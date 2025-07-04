@@ -92,13 +92,13 @@ export function TenderApply({tenderid}:{tenderid :string}) {
       }
     </AnimatePresence>
 
-    <div className='text-2xl ml-6 mt-8'>Apply for this tender</div>
+    <div className='text-2xl  mt-8'>Apply for this tender</div>
 
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: 'easeIn' }}
-      className="flex flex-col  mt-4 bg-neutral-900 p-3 rounded-md mr-8 ml-6 mb-8">
+      className="flex flex-col  mt-4 bg-neutral-900 p-3 rounded-md mr-8  mb-8">
 
       <div className="text-lg">{tender?.title}</div>
       <div className="text-neutral-400 max-w-3xl mt-2">{tender?.description}</div>
@@ -130,7 +130,7 @@ export function TenderApply({tenderid}:{tenderid :string}) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2, ease: 'easeIn' }}
-      className="flex flex-col mt-4 bg-neutral-900 p-3 rounded-md mr-8 ml-6 mb-8"
+      className="flex flex-col mt-4 bg-neutral-900 p-3 rounded-md mr-8  mb-8"
     >
 
 

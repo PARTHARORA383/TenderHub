@@ -54,7 +54,7 @@ export default function FetchCompanyDetails( ) {
   }, []);
 
   return (
-    <div className="p-6">
+    <div className="pr-8 pb-8 pt-6">
       {company ? (
         <motion.div
           initial={{ opacity: 0 }}
@@ -216,7 +216,15 @@ export default function FetchCompanyDetails( ) {
           )}
         </motion.div>
       ) : (
-        <div>Loading company details...</div>
+        <div> <div>
+          <div className="flex flex-col">
+             <div className="text-lg">Loading company data .....</div>
+            <div className="bg-neutral-900 animate-pulse h-32 w-full  mr-8 rounded-lg mt-8"></div> 
+            <div className="bg-neutral-900 animate-pulse h-68 w-full  mr-8 rounded-lg mt-8"></div> 
+            <div className="bg-neutral-900 animate-pulse h-32 w-full  mr-8 rounded-lg mt-8"></div> 
+
+            </div>
+        </div></div>
       )}
     </div>
   );

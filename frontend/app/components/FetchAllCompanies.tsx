@@ -46,7 +46,7 @@ export function FetchAllCompanies() {
   );
 
   return (
-    <div className="p-6">
+    <div className="pt-8 pr-8 pb-8">
       <div className="text-2xl mb-4">All Companies</div>
 
       {/* Search and Filter Controls */}
