@@ -12,9 +12,12 @@
     "nodemon": "^3.1.10",
     "zod": "^3.25.67"
   },
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "build": "npx prisma generate"
-  }
+"scripts": {
+  "dev": "nodemon index.js",
+  "start": " node index.js",
+  "build": " npx prisma generate --schema=./db/prisma/schema.prisma",
+  "postinstall": " npx prisma generate --schema=./db/prisma/schema.prisma"
+}
+
+
 }
