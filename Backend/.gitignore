@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Prisma generated files
+prisma/query_engine*
+prisma/schema.prisma
+prisma/migrations/
+
+# Build outputs
+dist/
+build/
+
+# TypeScript build outputs
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Edge and wasm files (general patterns)
+*.wasm
+*.wasm.d.ts
+*.edge.js
+*.dll.node
+
+# Environment files
+.env
+.env.local
+.env.*.local

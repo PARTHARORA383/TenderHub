@@ -16,6 +16,7 @@ import {
   FaGlobe
 } from "react-icons/fa";
 import { MdDesignServices, MdCleaningServices, MdSupportAgent } from "react-icons/md";
+import {motion } from 'motion/react'
 
 interface Props {
 
@@ -75,7 +76,12 @@ const servicesArray = [
 const isSelected = selectedServices.includes(item.name); 
 
 return(
-  <div  className={`cursor-pointer flex flex-col items-start gap-4 p-5 border rounded-lg 
+  <motion.div  
+   initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeIn' }}
+
+  className={`cursor-pointer flex flex-col items-start gap-4 p-5 border rounded-lg 
     ${isSelected ? " bg-neutral-900 border-neutral-400 transition-colors duration-200" : "bg-neutral-900 border-2 border-neutral-950 transition-colors duration-200"}`}
     key={index}
     onClick={()=>{
@@ -84,7 +90,7 @@ return(
 >
    <div className="text-xl font-medium">{item.icon}</div>
     <div className="font-medium">{item.name}</div>
-  </div>
+  </motion.div>
 )
 
 })}

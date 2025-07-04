@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  password String
+  company  Company?
+}
+
+model Company {
+  id          Int           @id @default(autoincrement())
+  name        String
+  industry    String
+  description String?
+  Logo        String?
+  Services    String[]
+  ownerid     Int           @unique
+  owner       User          @relation(fields: [ownerid], references: [id])
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  tenders     Tender[]
+  application Application[]
+}
+
+model Tender {
+  id          Int           @id @default(autoincrement())
+  title       String
+  description String
+  deadline    DateTime
+  budget      Int
+  company_id  Int
+  companyname String?
+  type        String ?
+  company     Company       @relation(fields: [company_id], references: [id])
+  application Application[]
+  locked  Boolean  @default(false)
+}
+
+model Application {
+  id Int @id @default(autoincrement())
+
+  tenderid Int
+  tender   Tender @relation(fields: [tenderid], references: [id])
+
+  companyid Int
+  company   Company @relation(fields: [companyid], references: [id])
+
+  proposal            String?
+  bidamount           Int?
+  estimatedCompletion DateTime?
+  status              Status    @default(pending)
+
+  createdAt DateTime @default(now())
+}
+
+enum Status {
+  pending
+  rejected
+  approved
+}

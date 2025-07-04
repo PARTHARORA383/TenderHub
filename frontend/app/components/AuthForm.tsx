@@ -13,9 +13,10 @@ interface Props {
   setEmail : React.Dispatch<React.SetStateAction<string>>
   password : string,
   setPassword : React.Dispatch<React.SetStateAction<string>>
+  isloading : boolean
 }
 
-export const AuthForm = ({isLogin , handleSubmit , email , setEmail , password , setPassword} : Props) => {
+export const AuthForm = ({isLogin , handleSubmit , email , setEmail , password , setPassword , isloading} : Props) => {
   const router = useRouter()
 
   return (
@@ -102,7 +103,15 @@ export const AuthForm = ({isLogin , handleSubmit , email , setEmail , password ,
             transition={{ duration: 0.3, ease: 'easeIn' }}
             className="w-2/3 bg-gradient-to-br from-[#6D8F77] to-[#4E6B58] mt-12 py-2 rounded-md text-neutral-100 flex items-center justify-center cursor-pointer"
             >
-            {isLogin ? "Login" : "Sign Up"}
+
+              
+              {isloading ? <div className=' w-6 h-6 rounded-full border-2 border-neutral-100 border-t-transparent animate-spin'>
+                    
+              </div> :<div>
+
+                     { isLogin ? "Login" : "Sign Up"}
+              </div>
+               }
           </motion.button>
             </form>
 
