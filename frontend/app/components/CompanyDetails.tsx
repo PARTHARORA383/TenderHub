@@ -30,9 +30,11 @@ export function CompanyDetails() {
   const [company, setCompany] = useState<CompanyDetails | null>(null);
   const [activeTab, setActiveTab] = useState<"profile" | "tenders">("profile");
   const params = useParams();
+  console.log("PARAMS:", params);
+
   const router = useRouter();
   const companyid = params.companyid;
-
+  
   const fetchCompanyDetail = async () => {
     try {
       const apiurl = process.env.NEXT_PUBLIC_API_URL;
