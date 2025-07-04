@@ -48,7 +48,7 @@ export function CompanyDetails() {
 
   useEffect(() => {
     fetchCompanyDetail();
-  }, [companyid]);
+  }, []);
 
   return (
     <div className="p-6">
