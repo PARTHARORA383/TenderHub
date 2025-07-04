@@ -4,7 +4,7 @@ import { CompanyDetails } from "@/app/components/CompanyDetails";
 
 
 
-export default function (){
+export default function ProfilePage (){
 
   const searchParams = useSearchParams();
   const companyid = searchParams.get('companyid');
