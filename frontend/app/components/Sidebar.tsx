@@ -40,13 +40,13 @@ export const SideBar = () => {
             <div onClick={() => handleNavigate("/Home")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
               <AiOutlineHome size={20} /> Home
             </div>
-            <div onClick={() => handleNavigate("/Tender")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
+            <div onClick={() => handleNavigate("/tender")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
               <MdWorkOutline size={20} /> Tenders
             </div>
-            <div onClick={() => handleNavigate("/Company")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
+            <div onClick={() => handleNavigate("/company")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
               <MdBusiness size={20} /> Companies
             </div>
-            <div onClick={() => handleNavigate("/CompanyProfile")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
+            <div onClick={() => handleNavigate("/companyprofile")} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer">
               <FaUserCircle size={20} /> Profile
             </div>
             <div onClick={handleLogout} className="flex items-center gap-3 p-2 rounded hover:bg-neutral-800 cursor-pointer mt-4">
