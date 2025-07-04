@@ -24,12 +24,13 @@ export default function CreateProfile() {
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
 
+
   const router = useRouter()
 
   const steps = [
     <CompanyProfileForm companyName={companyName} setCompanyName={setCompanyName} industry={industry} setIndustry={setIndustry} description={description} setDescription={setDescription} />,
-    <DragandDrop />,
-    <Services selectedServices={selectedServices} setSelectedServices={setSelectedServices} />
+    <DragandDrop setImageUrl={setLogo}/>,
+    <Services selectedServices={selectedServices} setSelectedServices={setSelectedServices}  />
 
   ]
 
@@ -44,10 +45,12 @@ export default function CreateProfile() {
         name: companyName,
         industry: industry,
         description: description,
-        logo: logo,
+        Logo: logo,
         Services: selectedServices
       }
-      console.log(token)
+
+      console.log(data)
+      console.log(token)  
 
       const response = await axios.post(`${apiUrl}/company`, data,
         {

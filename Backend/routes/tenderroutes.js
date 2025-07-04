@@ -38,28 +38,7 @@ router.post('/', authmiddleware, async (req, res) => {
       },
     });
 
-    const updatecompany = await prisma.company.update({
-      where: { id: Number(company_id) },
-      data: {
-        tenders: {
-          create: {
-            title,
-            deadline: new Date(deadline),
-            description,
-            type,
-            locked,
-            budget: Number(budget)
-          }
-        }
-      }
-    })
-
-    if(!updatecompany){
-      return res.status(404).json({
-        message : "Eroor updating the company"
-      })
-    }
-
+  
     return res.status(200).json({
       message: "Tender created successfully",
       newTender,

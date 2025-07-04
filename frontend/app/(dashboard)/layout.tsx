@@ -8,7 +8,7 @@ export default function DashboardLayout({
   return (
     <div>
       <SideBar/> 
-      <div className="ml-72">
+      <div className="  lg:ml-72">
       {children}
         </div> 
     </div>

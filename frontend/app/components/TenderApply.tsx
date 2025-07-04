@@ -28,28 +28,28 @@ export function TenderApply() {
   const [error , setErrror] = useState(false) 
   const router = useRouter()
   const tenderid = params.tenderid
-
   const handlefetchtender = async () => {
-
+    
     try {
       const apiurl = process.env.NEXT_PUBLIC_API_URL
-
+      const companyid = localStorage.getItem("companyid")
+      
       const response = await axios.get(`${apiurl}/tender/${tenderid}`)
       if (response.status == 200) {
         setTender(response.data.fetchTender)
       }
-
     } catch (e) {
       alert('Error fetching tender')
     }
-
+    
   }
-
+  
   const handleapply = async (e:any)=>{
     e.preventDefault()
     setIsApplying(true)
-
+    
     try {
+      const companyid = localStorage.getItem("companyid")
         const apiurl = process.env.NEXT_PUBLIC_API_URL
         const token = localStorage.getItem('token')
 
@@ -59,7 +59,7 @@ export function TenderApply() {
           bidamount : budget,
           tenderid : tenderid,
           status : "pending",
-          companyid : 2
+          companyid : companyid
         }
 
       const response = await axios.post(`${apiurl}/application` , data ,
