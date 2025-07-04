@@ -1,5 +1,5 @@
 
-
+"use client"
 import { CompanyDetails } from "@/app/components/CompanyDetails";
 
 
