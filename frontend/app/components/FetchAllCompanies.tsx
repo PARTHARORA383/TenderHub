@@ -106,7 +106,7 @@ export function FetchAllCompanies() {
                 <button
                   className="cursor-pointer px-6 border-2 border-neutral-500 rounded-md py-1 hover:bg-neutral-800 transition-all duration-200 active:border-neutral-100"
                   onClick={() => {
-                    router.push(`/company/${company.id}`);
+                     router.push(`/company/profile?companyid=${company.id}`);
                   }}
                 >
                   See Profile

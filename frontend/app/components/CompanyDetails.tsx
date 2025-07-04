@@ -26,17 +26,18 @@ interface Tender {
   type: string;
 }
 
-export function CompanyDetails() {
+export function CompanyDetails({companyid } :{companyid : string | null}) {
   const [company, setCompany] = useState<CompanyDetails | null>(null);
   const [activeTab, setActiveTab] = useState<"profile" | "tenders">("profile");
-  const params = useParams();
-  console.log("PARAMS:", params);
+ 
+
 
   const router = useRouter();
-  const companyid = params.companyid;
+
   
   const fetchCompanyDetail = async () => {
     try {
+      console.log('companyid' , companyid)
       const apiurl = process.env.NEXT_PUBLIC_API_URL;
       const response = await axios.get(`${apiurl}/company/${companyid}`);
 
@@ -50,7 +51,7 @@ export function CompanyDetails() {
 
   useEffect(() => {
     fetchCompanyDetail();
-  }, []);
+  }, [companyid]);
 
   return (
     <div className="p-6">
