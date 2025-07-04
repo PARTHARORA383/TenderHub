@@ -23,22 +23,21 @@ interface Company {
   name: string;
 }
 
-export default function SeeApplications() {
+export default function SeeApplications({tenderid} : {tenderid : string}) {
   const [applications, setApplications] = useState<Application[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [company, setCompany] = useState<Company | null>(null);
 
-  const params = useParams();
+ 
   const router = useRouter();
 
-  const tenderId = params.tenderid;
   const companyid = localStorage.getItem("companyid");
   const apiurl = process.env.NEXT_PUBLIC_API_URL;
 
   const fetchApplications = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${apiurl}/application/${tenderId}`);
+      const response = await axios.get(`${apiurl}/application/${tenderid}`);
       if (response.status === 200) {
         setApplications(response.data.applications);
       }
@@ -64,7 +63,7 @@ export default function SeeApplications() {
     try {
       const response = await axios.put(`${apiurl}/application/${applicationId}`, {
         status,
-        tenderid: tenderId,
+        tenderid: tenderid,
         companyid: companyid,
       });
       if (response.status === 200) {

@@ -15,7 +15,7 @@ interface Tender {
   type: string
 }
 
-export function TenderApply() {
+export function TenderApply({tenderid}:{tenderid :string}) {
 
   const [tender, setTender] = useState<Tender | null>(null)
   const params = useParams()
@@ -27,7 +27,7 @@ export function TenderApply() {
   const [loading , setloading] = useState(false);
   const [error , setErrror] = useState(false) 
   const router = useRouter()
-  const tenderid = params.tenderid
+  
   const handlefetchtender = async () => {
     
     try {

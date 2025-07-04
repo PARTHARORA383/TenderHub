@@ -140,7 +140,7 @@ export default function FetchAllTenders() {
         </div>
 
         <div className="absolute right-5 bottom-3"><button className=" border-2 border-neutral-500 active:border-neutral-200 hover:bg-neutral-800 cursor-pointer transition-colors duration-200 text-neutral-100 px-10 py-2 rounded-md " onClick={()=>{
-          router.push(`tender/apply/${tender?.id}`)
+       router.push(`/tender/apply?tenderid=${tender?.id}`);
         }}>Apply</button></div>
 
       </motion.div>

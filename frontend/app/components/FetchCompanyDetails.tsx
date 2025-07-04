@@ -26,7 +26,7 @@ interface Tender {
   type: string;
 }
 
-export default function FetchCompanyDetails() {
+export default function FetchCompanyDetails( ) {
   const [company, setCompany] = useState<CompanyDetails | null>(null);
   const [tenders, setTenders] = useState<Tender[]>([]);
   const [activeTab, setActiveTab] = useState<"profile" | "tenders">("profile");
@@ -199,7 +199,8 @@ export default function FetchCompanyDetails() {
                         </div>
                         <div className="absolute right-5 bottom-3">
                           <button className="border-2 border-neutral-500 active:border-neutral-200 hover:bg-neutral-800 cursor-pointer transition-colors duration-200 text-neutral-100 px-10 py-2 rounded-md " onClick={()=>{
-                            router.push(`/tender/${tender.id}/applications`)
+                          router.push(`/tender/applications?tenderid=${tender.id}`);
+
                           }}>
                             See applications
                           </button>
