@@ -28,7 +28,7 @@ export default function Signup()
 
       if(response.status == 200){
         localStorage.setItem("token" , response.data.token)
-        router.push('/Profile/create')
+        router.push('/Profile/Create')
       }
     }catch(e){
       setIsLoading(false)
