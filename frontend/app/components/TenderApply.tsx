@@ -70,7 +70,7 @@ export function TenderApply({tenderid}:{tenderid :string}) {
 
       if(response.status == 200){
         setloading(true)
-        router.push('/Tender')
+        router.push('/tender')
       }
 
 

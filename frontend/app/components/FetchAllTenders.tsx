@@ -101,7 +101,7 @@ export default function FetchAllTenders() {
     </div>
 
     <div className="px-6 py-2 border-2 border-neutral-950 rounded-md shadow-sm max-w-xs hover:bg-neutral-700 cursor-pointer transition-all duration-200 active:border-neutral-500 bg-gradient-to-br from-neutral-700 to-neutral-800 hover:bg-gradient-to-b" onClick={()=>{
-      router.push('/Tender/create')
+      router.push('/tender/create')
     }}> Create Tender</div>
 
         </div>

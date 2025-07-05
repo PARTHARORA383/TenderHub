@@ -46,13 +46,14 @@ export default function TenderCreateForm() {
     setLoading(true);
     e.preventDefault();
     const companyid = localStorage.getItem('companyid')
+
     const data = {
       title,
       description,
       type : tendertype,
       deadline,
       budget ,
-      company_id : companyid ,
+      company_id : Number(companyid) ,
       locked : false
     }
     try {
@@ -67,7 +68,7 @@ export default function TenderCreateForm() {
         }
       )
       if (response.status == 200){
-        router.push('/Tender')
+        router.push('/tender')
       }
 
     } catch (e) {

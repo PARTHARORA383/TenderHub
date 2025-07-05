@@ -63,7 +63,7 @@ export default function CreateProfile() {
 
       if (response.status == 200) {
         setTimeout(() => {
-          router.push('/')
+          router.push('/tender')
         }, 1000)
         localStorage.setItem("companyid" , response.data.company.id)
 

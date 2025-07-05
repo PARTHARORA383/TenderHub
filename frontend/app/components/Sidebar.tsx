@@ -33,7 +33,7 @@ export const SideBar = () => {
       <div className={`${isOpen ? "block" : "hidden"} lg:block fixed top-0 left-0 h-screen w-[240px] bg-neutral-900 p-4 z-40`}>
         <div className="flex flex-col gap-4">
           <div className="flex justify-center items-center cursor-pointer mb-4" onClick={() => handleNavigate("/Home")}>
-            <Image src={"/images/logo.png"} width={180} height={80} alt="Logo" />
+            <Image src={"/images/Logo.png"} width={180} height={80} alt="Logo" />
           </div>
 
           <div className="flex flex-col gap-2">
